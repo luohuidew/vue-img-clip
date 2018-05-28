@@ -1,4 +1,4 @@
-# vue_upload_clip
+# vue-uploadimg-clip
 
 > vue图片上传压缩插件
 
@@ -20,7 +20,7 @@ npm run build
 ## 实例
 首先在项目的入口文件（main.js）中引入
 ```
-import uplodaImg from 'vue_upload_clip'
+import uplodaImg from 'vue-uploadimg-clip'
 Vue.use(uplodaImg)
 ```
 

@@ -1,4 +1,4 @@
-import Slider from './uplodaImg.vue'
+import uplodaImg from './uplodaImg.vue'
 const comment = {
   install: function(Vue) {
     Vue.component('uplodaImg', uplodaImg)
