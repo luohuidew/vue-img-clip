@@ -1,7 +1,7 @@
 {
   "name": "vue-uploadimg-clip",
   "description": "图片压缩上传",
-  "version": "1.0.7",
+  "version": "1.0.8",
   "author": "Echo-luo <403304835@qq.com>",
   "main": "dist/vue-img-clip.js",
   "license": "MIT",
