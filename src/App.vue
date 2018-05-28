@@ -1,44 +1,41 @@
 <template>
   <div>
-    <Slider :sliders="sliders"  />
+    <uplodaImg :sliders="sliders"  />
   </div>
 </template>
 
 <script>
-import Slider from './lib/slider'
+import uplodaImg from './lib/uplodaImg'
 export default {
   name: 'app',
   data () {
     return {
       sliders: {
-        data: [
-          {
-            src: 'https://sxsimg.xiaoyuanzhao.com/D6/5A/D685908B685DA7068A50BB6A61EDB45A.png',
-            url: 'https://www.shixiseng.com/mx2018'
-          },
-          {
-            src: 'https://sxsimg.xiaoyuanzhao.com/27/B5/27C9EDE4770EF9F1A78A9E10D7F9D2B5.png',
-            url: 'https://www.shixiseng.com/tc/short'
-          },
-          {
-            src: 'https://sxsimg.xiaoyuanzhao.com/76/2B/765B7A996EBE2FBFEFF3733CDEED7A2B.jpg',
-            url: 'https://www.shixiseng.com/tc/rocket'
-          },
-          {
-            src: 'https://sxsimg.xiaoyuanzhao.com/F4/9E/F4FBC65B27DEB9790539956CF468409E.png',
-            url: 'https://wj.qq.com/s/1848680/dc3e'
-          }
-        ],
-        interval: 3000,
-        target: '_blank',
-        width:"900px",
-        height:"500px",
-        name: 'fade'
+        maxWidth: 600, // 最大宽度
+        maxHeight: 700, // 最大高度
+        url: 'upload.php', // 上传地址 Post请求
+        success: this.upImgSucess, // 上传成功回调
+        error: this.upImgError, // 上传失败回调
+        onProgress: this.imgUpOnprogess, //  进度回调
+        NoImgType: this.NoImgType, // 图片类型错误回调
       }
     }
   },
   components: {
-    Slider
+    uplodaImg
+  },
+  methods: {
+    upImgSucess(res, file) {
+      alert('上传成功')
+    },
+    upImgError(file) {
+        alert('上传失败')
+    },
+    imgUpOnprogess(file, loaded,  total) {
+    },
+    NoImgType() {
+      alert('必须是图片')
+    }
   }
 }
 </script>

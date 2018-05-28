@@ -1,6 +1,6 @@
-# vue-sliders
+# vue-img-clip
 
-> vue轮播图组件
+> vue图片上传压缩插件
 
 ## Build Setup
 
@@ -25,32 +25,27 @@ npm run build
 
 ## 实例
 首先在项目的入口文件（main.js）中引入
-``` 
-import Slider from 'mini-sliders'
-Vue.use(Slider) 
+```
+import uplodaImg from 'vue-img-clip'
+Vue.use(uplodaImg)
 ```
 
 然后使用该组件
-``` 
-<Slider :sliders="sliders"  />
+```
+<uplodaImg :sliders="sliders"  />
 ```
 
-``` 
-sliders: {
-        data: [
-          {
-            src: 'https://sxsimg.xiaoyuanzhao.com/D6/5A/D685908B685DA7068A50BB6A61EDB45A.png', //图片地址
-            url: 'https://www.shixiseng.com/mx2018' //链接跳转地址
-          }
-        ],//传入图片地址和链接跳转地址，必选
-        interval: 3000, //轮播动画时间，可选（默认3000ms）
-        target: '_blank', //跳转方式，可选（默认_self）
-        width:"1200px",//图片宽度，可选（默认800px）
-        height:"600px",//图片高度，可选（默认400px）
-        name: 'fade' //轮播图动画方式，可选（默认move）
-      } 
+```
+      sliders: {
+        maxWidth: 600, // 最大宽度
+        maxHeight: 700, // 最大高度
+        url: 'upload.php', // 上传地址 Post请求
+        success: this.upImgSucess, // 上传成功回调
+        error: this.upImgError, // 上传失败回调
+        onProgress: this.imgUpOnprogess, //  进度回调
+        NoImgType: this.NoImgType, // 图片类型错误回调
+      }
 ```
 
-关于vue封装插件并发布到npm上的步骤可参考我的微博[vue封装插件并发布到npm上](https://github.com/echo-lu/mini-sliders)
 
-For detailed explanation on how things work, consult the [docs for vue-loader](http://vuejs.github.io/vue-loader).
+

@@ -1,11 +1,11 @@
-import Slider from './slider.vue'
+import Slider from './uplodaImg.vue'
 const comment = {
   install: function(Vue) {
-    Vue.component('Slider', Slider)
+    Vue.component('uplodaImg', uplodaImg)
   }
 }
 // 这里的判断很重要
-if (typeof window !== 'undefined' && window.Vue) { 
-    window.Vue.use(comment) 
+if (typeof window !== 'undefined' && window.Vue) {
+    window.Vue.use(comment)
 }
 export default comment
